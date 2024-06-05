@@ -1,0 +1,39 @@
+@import url("global.css");
+
+.conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.form-conteiner, .table-conteiner {
+    width: 48%;
+}
+
+.form-conteiner form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-conteiner label,
+.form-conteiner input,
+.form-conteiner select {
+    margin-bottom: 10px;
+}
+
+.table-conteiner table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-conteiner th, .table-conteiner td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table-conteiner th {
+    background-color: #f2f2f2;
+}
+
