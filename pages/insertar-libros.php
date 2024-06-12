@@ -1,6 +1,6 @@
 <?php
 //llamar autores
-include "/xampp/htdocs/Taller_Web/Conexion/conexion.php";
+include "/xampp/htdocs/Taller_Web/db/dbConnection.php";
 $conecta = conexionDB();
 $sqlLlamarautor = "SELECT id_autor,nombre FROM autores";
 $result = $conecta->query($sqlLlamarautor);
@@ -31,7 +31,7 @@ $result3 = $conecta->query($sqlLlamarlibros);
 <body>
     <header class="header">
         <h1 class="header-h1">Biblioteca Educativa LCE</h1>
-        <img src="imagen/logo.jpg" alt="Logo de la Biblioteca" class="header-img" />
+        <img src="./../assets/logo.jpg" alt="Logo Biblioteca" class="header-img" />
     </header>
     <nav>
         <a href="admin.html">Inicio</a>
@@ -79,7 +79,7 @@ $result3 = $conecta->query($sqlLlamarlibros);
                     //categoria
                     if ($result2->num_rows > 0) {
                         while ($row = $result2->fetch_assoc()) {
-                            echo "<option value='" . $row["id_categoria"] . "'>" . $row["categoria"] . "</option>";
+                            echo "<option value='" . $row["id_categoria"] . "'>" . $row["categori}a"] . "</option>";
                         }
                     }
                     ?>
