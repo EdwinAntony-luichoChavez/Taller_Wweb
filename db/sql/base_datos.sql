@@ -2,6 +2,11 @@ DROP DATABASE IF EXISTS biblioteca;
 CREATE DATABASE biblioteca CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_general_ci;
 USE biblioteca;
 
+CREATE TABLE tipos_usuarios (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(15) NOT NULL
+) ENGINE=InnoDB;
+
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     apellido VARCHAR(200) NOT NULL,
@@ -10,7 +15,11 @@ CREATE TABLE usuarios (
     direccion VARCHAR(255) NOT NULL,
     correo VARCHAR(100) NOT NULL UNIQUE,
     clave VARCHAR(255) NOT NULL,
-    fecha_registro DATE NOT NULL DEFAULT (CURDATE())
+    fecha_registro DATE NOT NULL DEFAULT (CURDATE()),
+	tipo_usuario INT NOT NULL,
+    FOREIGN KEY (tipo_usuario) REFERENCES tipos_usuarios(id)
+		ON DELETE SET NULL
+        ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE lugares_procedencia (
@@ -124,4 +133,4 @@ INSERT INTO libros (titulo, id_autor, id_editorial, id_categoria, año_publicaci
 ('Kafka en la orilla', 12, 12, 6, 2002, 25),
 ('La Ilíada', 13, 13, 3, null, 30),
 ('Gabriela, clavo y canela', 14, 14, 1, 1958, 20),
-('Ficciones', 15, 15, 3, 1944, 35);
+('Ficciones', 15, 15, 3, 1944, 35);usuarios

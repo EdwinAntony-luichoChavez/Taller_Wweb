@@ -1,5 +1,5 @@
 <?php
-include "/xampp/htdocs/Taller_Web/Conexion/conexion.php";
+include "/xampp/htdocs/Taller_Web/db/dbConnection.php";
 
 $nombre = $_POST['nombre'];
 $procedencia = $_POST['id_lugar_procedencia'];
@@ -22,5 +22,3 @@ if ($sqlautor->execute()) {
 // Cerrar la conexión
 $sqlautor->close();
 $conecta->close();
-?>
-

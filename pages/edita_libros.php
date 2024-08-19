@@ -1,5 +1,5 @@
 <?php
-include "/xampp/htdocs/Taller_Web/Conexion/conexion.php";
+include "/xampp/htdocs/Taller_Web/db/dbConnection.php";
 $conecta = conexionDB();
 
 if (isset($_GET['id'])) {
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <header class="header">
         <h1 class="header-h1">Biblioteca Educativa LCE</h1>
-        <img src="imagen/logo.jpg" alt="Logo de la Biblioteca" class="header-img" />
+        <img src="./../assets/logo.jpg" alt="Logo Biblioteca" class="header-img"/>
     </header>
     <nav>
         <a href="admin.html">Inicio</a>
